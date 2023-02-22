@@ -19,16 +19,30 @@
 // Take what you know about summing 'n' numbers (using a C array) and write that code,
 // Debug in C++
 // change to a template.
-#include<stdio.h>
-#include<string.h>
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-struct number {
-    int num;
-};
+template <typename T>
+T accumulate(T acc, T value){
+    acc = acc + value;
+    return acc;
+}
+
+//answer
+template <class summable>
+summable sum(const summable data[], int size, summable s=0){
+    for(int i = 0; i < size; i++){
+        s += data[i];
+        //+= must work for summable
+    }
+    return s;
+}
 
 int main(){
-    struct number numbers_array[5] = {1,2,3,4,5};
+    int myNumbers[5] = {10, 20, 30, 40, 50};
+
+    cout << sum<int>(myNumbers, 5);
     return 0;
 }
