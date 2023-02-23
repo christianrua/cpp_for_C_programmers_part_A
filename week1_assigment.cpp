@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 const int N = 40;
@@ -14,10 +15,12 @@ void sum(int *p,int n, int d[]){
 int main(){
     int i;
     int accum = 0;
-    int data[N];
-//https://stackoverflow.com/questions/8777603/what-is-the-simplest-way-to-convert-array-to-vector
+    //int data[N];
+    vector<int> data;
+    //https://www.geeksforgeeks.org/vector-in-cpp-stl/
     for(i = 0; i < N; ++i){
-        data[i] = i;
+        data.push_back(i);
+        //data[i] = i;
         sum(&accum, N, data);
         printf("sum is %d\n", accum);
     }

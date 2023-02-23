@@ -15,6 +15,7 @@ void sum(int *p,int n, int d[]){
         *p = *p + d[i];
     }    
 }
+
 int main(){
     int i;
     int accum = 0;
